@@ -34,5 +34,5 @@ webpack-cli本身提供了几个命令任务：init、info、server、migrate等
 ![avatar](./imgs/02/02_3.png)
 
 ## 总结
-在看源码的时候，自己对webpack-cli有了更深入的认识，也发现了webpack-cli更多的配置特性。另外，不得不说的是webpack完善的代码体系，包括控制台日志的打印、报错信息的输出规范，都有系统地封装。
+不得不说的是webpack完善的代码体系，包括控制台日志的打印、报错信息的输出规范，都有系统地封装。对webpack-cli源码的研究，进一步深入地了解其应用，同时，如果对webpack-cli的使用比较熟悉，也会降低研究源码的难度。
 

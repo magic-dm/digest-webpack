@@ -1,4 +1,4 @@
-# Webpack关键路径整理
+## Webpack关键路径整理
 
 1. **获取配置参数并启动webpack：**
    1. ./node_modules/webpack-cli/bin/cli.js 
@@ -24,3 +24,15 @@
 4. **将生成的文件列表写出到对应的路径下**
    1. ./node_modules/webpack/lib/Compiler.js
       1. emitAssets()
+
+## Webpack构建过程中几个关键的钩子
+
+      1. entry-option：初始化options
+      2. run：启动编译
+      3. make：从entry开始递归分析依赖并对依赖进行build
+      4. build-moodule：使用loader加载文件并build模块
+      5. normal-module-loader：对loader加载的文件用acorn编译，生成抽象语法树AST
+      6. program：开始对AST进行遍历，当遇到require时触发call require事件
+      7. seal：所有依赖build完成，开始对chunk进行优化（抽取公共模块、加hash等）
+      8. optimize-chunk-assets：压缩代码
+      9. emit：把各个chunk输出到结果文件
