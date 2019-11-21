@@ -1,9 +1,9 @@
 # webpack事件流之Tapable
-#### 摘要
+## 摘要
 上一章我们有提到webpack支持特定的配置，来监控其编译进度，那么这个机制是怎么实现的呢？
 webpack整个构建周期，会涉及很多个阶段，每个阶段都对应着一些节点，这些节点就是我们常说的钩子，每一个钩子上挂载着一些插件，可以说整个webpack生态系统是由一系列的插件组成的。当主构建流程进行编译打包的时候，会陆续触发一些钩子的call方法（相当于emitter），相应的插件（相当于listener）就会得到执行，webpack将这个机制封装为一个库，就是[Tapable](https://webpack.docschina.org/api/tapable/)，webpack的核心对象Compiler和Complation均是Tapable的实例。
 
-#### 特性
+## 特性
 Tapable提供了很多类型的hook，主要分为两大类：同步和异步，异步又分为串行（前一个异步执行完才会执行下一个）和并行（等待所有并发的异步事件执行完之后才会执行最后的回调）。在webpack里边（Compiler和Compilation）主要使用了SyncHook、SyncBailHook、AsyncSeriesHook三种钩子，因此这里我们只着重介绍这三种。
 
 我们参考的版本是webpack中使用的版本v1.1.3，这里有个[Tapable的源码注释版](https://github.com/magic-dm/digest-tapable)，主要是Hook.js、SyncHook.js、HookCodeFactory.js三个文件，可以供大家参考。
@@ -14,8 +14,8 @@ Tapable提供了很多类型的hook，主要分为两大类：同步和异步，
 * HookCodeFactory基类根据前者返回的options生成执行钩子的代码，下边截图有个例子展示生成的钩子代码是什么样的：
 
 
-#### 实现
-##### 1. SyncHook
+## 实现
+#### 1. SyncHook
 **SyncHook的初始化及钩子函数的函数体**
    1. 初始化：
 ![avatar](./imgs/03/1.jpg)
@@ -124,7 +124,7 @@ hook.tap({
 hook.call('arg1', 'arg2')
 ```
 
-##### 2. SyncBailHook
+#### 2. SyncBailHook
 **SyncBailHook的初始化及钩子函数的函数体**
    1. 初始化：
 ![avatar](./imgs/03/3.jpg)
@@ -174,7 +174,7 @@ hook.call('hi')
 
 
 
-##### 3. AsyncSeriesHook
+#### 3. AsyncSeriesHook
 **AsyncSeriesHook的初始化及钩子函数的函数体**
    1. 初始化：
 ![avatar](./imgs/03/5.jpg)
