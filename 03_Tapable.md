@@ -208,7 +208,7 @@ class AsyncSeriesHook{
     // some code ... 
 }
 
-const hook = new _AsyncSeriesHook(['arg'])
+const hook = new AsyncSeriesHook(['arg'])
 hook.tapAsync('A', (param, cb) => {
     setTimeout(() => {
         console.log('A', param)
