@@ -10,8 +10,8 @@ Tapable提供了很多类型的hook，主要分为两大类：同步和异步，
 
 源码里边，每一个文件对应一个类型的钩子。每一种钩子都是基于Hook和HookCodeFactory两个类。
 
-* Hook基类主要收集并处理挂载在钩子上的taps以及interceptors;
-* HookCodeFactory基类根据前者返回的options生成执行钩子的代码，下边截图有个例子展示生成的钩子代码是什么样的：
+* Hook基类主要收集并处理挂载在钩子上的taps以及interceptors
+* HookCodeFactory基类根据前者返回的options生成执行钩子的代码
 
 
 ## 实现
