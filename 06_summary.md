@@ -82,7 +82,7 @@ _insert(item){
 }
 ```
 
-+ 生成的文件已经放在./other/list文件夹下。不足之处是没法获取钩子的名字，如：this.hooks.beforeRun.call()，要获取beforeRun这个名字，如果能获取到这个字段信息的话，流程会更加清晰，但目前还没有想到比较好的方法。
++ 生成的文件已经放在./other/data文件夹下。不足之处是没法获取钩子的名字，如：this.hooks.beforeRun.call()，要获取beforeRun这个名字，如果能获取到这个字段信息的话，流程会更加清晰，但目前还没有想到比较好的方法。
 
 
 ## 总结
