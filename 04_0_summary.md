@@ -13,4 +13,4 @@ webpack的核心功能是通过抽离出很多插件来实现的，因此系统�
 
 webpack支持传入多个配置对象，比如一个library有多个构建目标，就需要传入多个配置对象，每个配置对象都会执行。如果传入一个数组，初始化的就不是Compiler，而是MultiCompiler，最后会运作MultiCompiler上的run方法，在里边遍历compilers对象，存放着Compiler数组，然后会依次调用Conmpiler的run方法。
 
-## 注：./other/comment-version文件夹下有webpack.js的注释版本，源码可以结合官方文档一起看 ##
+**注：./other/comment-version文件夹下有webpack.js的注释版本，源码可以结合官方文档一起看**
