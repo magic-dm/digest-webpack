@@ -1,5 +1,5 @@
 ## run方法
-compiler的启动是run方法，run方法里边主要关注两个动作：调用了compile方法；生命了调用compile传入的回调函数onCompiled。
+compiler的启动是run方法，run方法里边主要关注两个动作：调用了compile方法；声明了调用compile传入的回调函数onCompiled。
 
 1. **compile()**
    涉及webpack构建生命周期的几个重要钩子：
