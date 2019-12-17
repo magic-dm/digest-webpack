@@ -96,8 +96,10 @@ server.listen('8888', () => {
 
 
 #### webpack-dev-middleware
-已监听模式启动webpack，将webpack编译好的文件输出到缓存中，从而提高了构建速度，这是与直接调用webpack的watch方法最大的区别。底层使用memory-fs替换了webpack的outputFileSystem属性。
-
+一个用于开发环境的工具。wdm以监听模式启动webpack，将webpack编译好的文件输出到缓存中，从而提高了构建速度，这是与直接调用webpack的watch方法最大的区别。底层使用memory-fs替换了webpack的outputFileSystem属性。
+我们看下它在wds中的使用就只到它为啥被成为中间件了：
+![avatar](./imgs/02/2.jpg)
+![avatar](./imgs/02/3.jpg)
 
 
 #### WDS
