@@ -97,7 +97,7 @@ server.listen('8888', () => {
 
 #### webpack-dev-middleware
 一个用于开发环境的工具。wdm以监听模式启动webpack，将webpack编译好的文件输出到缓存中，从而提高了构建速度，这是与直接调用webpack的watch方法最大的区别。底层使用memory-fs替换了webpack的outputFileSystem属性。
-我们看下它在wds中的使用就只到它为啥被成为中间件了：
+wds是基于express的，而wdm是express的一个中间件：
 ![avatar](./imgs/02/2.jpg)
 ![avatar](./imgs/02/3.jpg)
 
@@ -112,7 +112,7 @@ server.listen('8888', () => {
 **Server.js**
 重点来看下实例化Server这个动作。在Server.js里边，有以下几个关键动作：
 1. 在compiler上挂载钩子
-2. 使用的express及http模块创建服务并进行路由配置
+2. 使用express及http模块创建服务并进行路由配置
 3. 启动webpack-dev-middleware
 4. 创建Server（使用sockjs或ws模块）
 
